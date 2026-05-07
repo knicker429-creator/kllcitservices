@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="40+ years of enterprise IT — now serving Summerlin & Las Vegas. WiFi optimization, network security, smart home setup & AI consulting. Call today.">
+<title>KLLC IT Services · Summerlin & Las Vegas IT Expert</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #0A2040;
+    --navy2:   #0D2D58;
+    --gold:    #C49D48;
+    --gold2:   #D4AE5A;
+    --white:   #FFFFFF;
+    --offwhite:#F8F6F2;
+    --light:   #F2EFE8;
+    --mid:     #7A7060;
+    --dark:    #1A1A1A;
+    --green:   #2E6B1A;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    line-height: 1.6;
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,32,64,0.97);
+    backdrop-filter: blur(8px);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    border-bottom: 1px solid rgba(196,157,72,0.2);
+  }
+
+  .nav-brand {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--white); text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .nav-brand span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75); text-decoration: none;
+    font-size: 14px; font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold); color: var(--navy) !important;
+    font-weight: 600 !important;
+    padding: 8px 18px; border-radius: 4px;
+  }
+
+  /* ── HERO ────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #0A1828 100%);
+    display: flex; align-items: center;
+    padding: 100px 5% 60px;
+    position: relative; overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px; border-radius: 50%;
+    border: 60px solid rgba(196,157,72,0.06);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -80px; left: -80px;
+    width: 350px; height: 350px; border-radius: 50%;
+    border: 40px solid rgba(196,157,72,0.04);
+  }
+
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    position: relative; z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(196,157,72,0.12);
+    border: 1px solid rgba(196,157,72,0.25);
+    color: var(--gold); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 28px;
+  }
+
+  .hero-badge::before {
+    content: '●'; font-size: 8px;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .hero h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700; color: var(--white);
+    line-height: 1.15; margin-bottom: 24px;
+    max-width: 700px;
+  }
+
+  .hero h1 em {
+    font-style: normal; color: var(--gold);
+    display: block;
+  }
+
+  .hero p {
+    font-size: 18px; color: rgba(255,255,255,0.72);
+    max-width: 560px; margin-bottom: 40px;
+    line-height: 1.7; font-weight: 300;
+  }
+
+  .hero-ctas {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    margin-bottom: 64px;
+  }
+
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    font-size: 15px; font-weight: 600;
+    padding: 14px 28px; border-radius: 4px;
+    text-decoration: none; display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--gold2); transform: translateY(-1px); }
+
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.4);
+    color: var(--white); font-size: 15px; font-weight: 400;
+    padding: 14px 28px; border-radius: 4px;
+    text-decoration: none; display: inline-block;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+
+  .btn-outline:hover { border-color: var(--gold); transform: translateY(-1px); }
+
+  .hero-stats {
+    display: flex; gap: 48px; flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 40px;
+  }
+
+  .hero-stat-num {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 36px; font-weight: 700; color: var(--gold);
+    display: block;
+  }
+
+  .hero-stat-lbl {
+    font-size: 13px; color: rgba(255,255,255,0.55);
+    font-weight: 400; margin-top: 2px;
+  }
+
+  /* ── TRUST BAR ───────────────────────────────────── */
+  .trust-bar {
+    background: var(--light);
+    padding: 20px 5%;
+    border-bottom: 1px solid #E0DACE;
+  }
+
+  .trust-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px; flex-wrap: wrap;
+    font-size: 13px; color: var(--mid); font-weight: 400;
+  }
+
+  .trust-dot { color: var(--gold); font-size: 8px; }
+
+  /* ── SECTION COMMONS ─────────────────────────────── */
+  section { padding: 80px 5%; }
+
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 700; color: var(--navy);
+    line-height: 1.2; margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 16px; color: var(--mid);
+    max-width: 580px; margin-bottom: 52px;
+    font-weight: 300;
+  }
+
+  /* ── SERVICES ────────────────────────────────────── */
+  #services { background: var(--white); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .svc-card {
+    background: var(--white);
+    border: 1px solid #E8E4DA;
+    border-left: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 28px 24px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .svc-card:hover {
+    box-shadow: 0 8px 32px rgba(10,32,64,0.08);
+    transform: translateY(-2px);
+  }
+
+  .svc-icon { font-size: 22px; margin-bottom: 14px; }
+
+  .svc-title {
+    font-size: 16px; font-weight: 600;
+    color: var(--navy); margin-bottom: 8px;
+  }
+
+  .svc-desc {
+    font-size: 14px; color: var(--mid);
+    line-height: 1.6; font-weight: 300;
+  }
+
+  /* ── ABOUT ───────────────────────────────────────── */
+  #about {
+    background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+
+  #about::before {
+    content: '';
+    position: absolute; top: -60px; right: -60px;
+    width: 300px; height: 300px; border-radius: 50%;
+    border: 50px solid rgba(196,157,72,0.07);
+  }
+
+  #about .section-title { color: var(--white); }
+  #about .section-label { color: var(--gold); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px; align-items: start;
+  }
+
+  .about-body {
+    font-size: 16px; color: rgba(255,255,255,0.75);
+    line-height: 1.8; font-weight: 300;
+    margin-bottom: 32px;
+  }
+
+  .about-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .about-stat {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; padding: 20px;
+    text-align: center;
+  }
+
+  .about-stat-num {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 32px; font-weight: 700; color: var(--gold);
+    display: block;
+  }
+
+  .about-stat-lbl {
+    font-size: 12px; color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
+  .about-logos {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-top: 28px;
+  }
+
+  .logo-pill {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 4px; padding: 6px 14px;
+    font-size: 12px; font-weight: 500;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ── REVIEWS ─────────────────────────────────────── */
+  #reviews { background: var(--offwhite); }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+
+  .review-card {
+    background: var(--white);
+    border: 1px solid #E8E4DA;
+    border-radius: 8px; padding: 28px;
+  }
+
+  .review-stars { color: var(--gold); font-size: 16px; margin-bottom: 14px; }
+
+  .review-text {
+    font-size: 15px; color: #444;
+    font-style: italic; line-height: 1.7;
+    margin-bottom: 16px; font-weight: 300;
+  }
+
+  .reviewer {
+    font-size: 13px; font-weight: 600; color: var(--navy);
+  }
+
+  /* ── CONTACT ─────────────────────────────────────── */
+  #contact { background: var(--white); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px; margin-top: 0;
+  }
+
+  .contact-card {
+    background: var(--light);
+    border-radius: 8px; padding: 24px;
+    text-align: center;
+  }
+
+  .contact-method {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--mid); margin-bottom: 8px;
+  }
+
+  .contact-val {
+    font-size: 16px; font-weight: 500; color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .contact-note { font-size: 12px; color: var(--mid); font-weight: 300; }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  footer {
+    background: var(--navy);
+    padding: 24px 5%;
+    text-align: center;
+    border-top: 1px solid rgba(196,157,72,0.2);
+  }
+
+  footer p {
+    font-size: 13px; color: rgba(255,255,255,0.4);
+  }
+
+  footer span { color: var(--gold); }
+
+  /* ── RESPONSIVE ──────────────────────────────────── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 28px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .hero-ctas { flex-direction: column; }
+    .btn-primary, .btn-outline { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────── -->
+<nav>
+  <a href="#" class="nav-brand">KLLC <span>IT Services</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Call Now</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Summerlin · Las Vegas, NV</div>
+    <h1>Your Neighborhood <em>IT Expert.</em></h1>
+    <p>Enterprise-grade technology solutions for your home and small business — delivered by a 40-year IT veteran who lives right here in Summerlin.</p>
+    <div class="hero-ctas">
+      <a href="tel:+17027204986" class="btn-primary">&#128222; Schedule a Call</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <span class="hero-stat-num">40+</span>
+        <span class="hero-stat-lbl">Years IT Experience</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">F500</span>
+        <span class="hero-stat-lbl">Enterprise Background</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">5.0★</span>
+        <span class="hero-stat-lbl">Google Reviews</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ─────────────────────────────────────── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <span>40+ Years Enterprise IT</span>
+    <span class="trust-dot">●</span>
+    <span>Bank of America · Chevron · Wells Fargo</span>
+    <span class="trust-dot">●</span>
+    <span>Serving Summerlin &amp; Greater Las Vegas</span>
+  </div>
+</div>
+
+<!-- ── SERVICES ──────────────────────────────────────── -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Services</h2>
+    <p class="section-sub">Residential &amp; small business technology solutions — no jargon, no runaround.</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">&#127760;</div>
+        <div class="svc-title">WiFi &amp; Network Optimization</div>
+        <div class="svc-desc">Dead zones eliminated. Full home coverage. Router, modem &amp; mesh configuration.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">&#128274;</div>
+        <div class="svc-title">Network Security</div>
+        <div class="svc-desc">Firewall setup, DNS filtering, VPN, and threat protection for your home or office.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">&#127968;</div>
+        <div class="svc-title">Smart Home Integration</div>
+        <div class="svc-desc">Ring, Nest, Sonos, Alexa &amp; IoT devices configured and connected — the right way.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">&#129302;</div>
+        <div class="svc-title">AI Strategy Consulting</div>
+        <div class="svc-desc">Practical AI tools for your small business. Automate smarter, not harder.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">&#128225;</div>
+        <div class="svc-title">Broadband Troubleshooting</div>
+        <div class="svc-desc">Slow internet diagnosed and fixed. ISP liaison support included.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">&#128187;</div>
+        <div class="svc-title">Device Setup &amp; Support</div>
+        <div class="svc-desc">Mac, PC, phone, tablet — setup, migration, and ongoing support.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────────────────── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">About KLLC</div>
+    <h2 class="section-title">40 Years of Enterprise IT.<br>Now Serving Your Neighborhood.</h2>
+    <div class="about-grid">
+      <div>
+        <p class="about-body">KLLC IT Services brings Fortune 500-caliber systems engineering to Summerlin homeowners and small businesses. Founded by Joseph Knickerbocker — a veteran IT Systems Engineer with career stops at Bank of America, Chevron, and Wells Fargo — now channeling that enterprise-grade expertise into your community. You get the same precision, security, and reliability that large corporations rely on, at a scale that works for you.</p>
+        <div class="about-logos">
+          <div class="logo-pill">Bank of America</div>
+          <div class="logo-pill">Chevron</div>
+          <div class="logo-pill">Wells Fargo</div>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="about-stat-num">40+</span>
+          <div class="about-stat-lbl">Years Experience</div>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">F500</span>
+          <div class="about-stat-lbl">Enterprise Background</div>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">5.0★</span>
+          <div class="about-stat-lbl">Google Rating</div>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">SAB</span>
+          <div class="about-stat-lbl">Summerlin-Based</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ───────────────────────────────────────── -->
+<section id="reviews">
+  <div class="section-inner">
+    <div class="section-label">Client Reviews</div>
+    <h2 class="section-title">What Neighbors Are Saying</h2>
+    <p class="section-sub">5.0 stars on Google · Serving Summerlin &amp; Greater Las Vegas</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Joseph upgraded our router, modem and completely eliminated our WiFi dead zones. Professional, fast, and explained everything clearly. Highly recommend!"</div>
+        <div class="reviewer">Jim O. — Summerlin, NV</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Finally someone who speaks plain English about tech. Joseph secured our home network and set up our smart devices — couldn't be happier with the results."</div>
+        <div class="reviewer">Neighbor Review — Las Vegas, NV</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ───────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Ready to Help</h2>
+    <p class="section-sub">Based in Summerlin · Serving Greater Las Vegas · Same-week availability</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-method">Phone / Text</div>
+        <div class="contact-val">(702) 720-4986</div>
+        <div class="contact-note">Mon–Sat, 9am–5pm</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-method">Email</div>
+        <div class="contact-val">Knicker429@Gmail.com</div>
+        <div class="contact-note">Response within 24 hrs</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-method">Service Area</div>
+        <div class="contact-val">Summerlin &amp; Las Vegas</div>
+        <div class="contact-note">Clark County, NV</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-method">Free Consultation</div>
+        <div class="contact-val">10-Minute Call</div>
+        <div class="contact-note">No obligation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────── -->
+<footer>
+  <p>&copy; 2026 <span>KLLC IT Services</span> &middot; Summerlin, Las Vegas, NV &middot; All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
